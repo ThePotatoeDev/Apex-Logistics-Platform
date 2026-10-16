@@ -1,5 +1,8 @@
 import Sidebar from "@/components/layout/Sidebar"
 import Navbar from "@/components/layout/Navbar";
+import KpiDeck from "@/components/admin/KpiDeck";
+import ManifestTable from "@/components/admin/ManifestTable";
+import ShipmentsCharts from "@/components/admin/ShipmentsCharts";
 
 function App() {
   return (
@@ -10,36 +13,25 @@ function App() {
         <Navbar />
         <main id="main-content" tabIndex={-1} className="flex-1 p-6 md:p-8 space-y-6 outline-none flex flex-col">
           <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                Apex Logistics Comman Center
-              </h1>
-              <span className="inline-flex items-center gap-3 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 ">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Live & Verified
-              </span>
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  Apex Logistics Comman Center
+                </h1>
+                <span className="inline-flex items-center gap-3 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 ">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Live & Verified
+                </span>
+              </div>
+
+              <p className="text-slate-400 mt-2 text-sm">
+                Master dispatch console initialized. Responsive desktop sidebar, command header, and mobile drawer active.
+              </p>
             </div>
 
-            <p className="text-slate-400 mt-2 text-sm">
-              Master dispatch console initialized. Responsive desktop sidebar, command header, and mobile drawer active.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-              <div className="bg-slate-950/60 border border-slate-800 p-4 rounded-xl">
-                <p className="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Active Convoys</p>
-                <p className="text-3xl font-bold text-cyan-400 mt-1">84</p>
-              </div>
-              
-              <div className="bg-slate-950/60 border border-slate-800 p-4 rounded-xl">
-                <p className="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Checkpoints Monitored</p>
-                <p className="text-3xl font-bold text-emerald-400 mt-1">14</p>
-              </div>
-              
-              <div className="bg-slate-950/60 border border-slate-800 p-4 rounded-xl">
-                <p className="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Unresolved Incidents</p>
-                <p className="text-3xl font-bold text-emerald-400 mt-1">0</p>
-              </div>
-            </div>
+            <KpiDeck />
+            <ShipmentsCharts />
+            <ManifestTable />
           </div>
         </main>
         <footer className="mt-auto p-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
